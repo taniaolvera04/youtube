@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Lex;
+    src: url(fonts/Lexend-Medium.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lex;
+}
+
+body{
+    text-align: center;
+    color:white;
+    background: rgb(255,163,203);
+background: radial-gradient(circle, rgba(255,163,203,1) 0%, rgba(171,123,237,1) 100%);
+}
+
+h1{
+    font-size: 60px;
+    text-shadow: 0 0 30px purple;
+}
+
+a{
+    display: block;
+    color:white;
+    text-decoration: none;
+    width: 250px;
+    height: 40px;
+    margin: 10px auto;
+    background: rgb(188, 111, 207);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+a:hover{
+    box-shadow: 0 0 5px pink;
+    border: 1px solid white;
+    background: rgb(170, 228, 252);
+    transform: scale(1.2);
+}

@@ -1,0 +1,30 @@
+*{
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+}
+
+
+#vpeso{
+    font-size: 40px;
+    color: rgb(197, 60, 129);
+}
+
+#valtura{
+    font-size: 40px;
+    color: rgb(118, 47, 146);
+}
+
+#imc{
+    font-size: 40px;
+    color:rgb(98, 190, 221);
+}
+
+#tabla{
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+}
+
+#f1, #f2, #f3, #f4, #f5, #f6{
+transition: 2s ease all;
+}
