@@ -3,14 +3,8 @@
     src: url(fonts/Lexend-Medium.ttf);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Lex;
-}
-
 body{
+    font-family: Lex;
     text-align: center;
     color:white;
     background: rgb(255,163,203);
