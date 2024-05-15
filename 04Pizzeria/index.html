@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRAWBERRY'S PIZZERIA</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <style>
+        h2{
+            color:rgb(228, 136, 179);
+        }
+        h1{
+            color: rgb(182, 136, 182);
+        }
+        h3{
+            color: rgb(88, 156, 184);
+        }
+    </style>  
+</head>
+
+<body class="text-center">
+
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img src="img/logo.png" alt="Logo" width="65" height="65" class="d-inline-block align-text-top m-auto">
+          <span class="navbar-brand m-auto w-100 h1">STRAWBERRY'S PIZZERIA</span>
+        </div>
+      </nav><br>
+    
+
+      <div class="container-fluid w-75 m-auto">
+        <div class="card text-center mt-4">
+            <div class="card-header">
+                <img src="img/logo.png" alt="" height="85px">
+            </div>
+            <div class="card-body">
+                  <table class="table w-100 m-auto">
+                    <tr>
+                        <td><h2>TIPO PIZZA</h2></td>
+                        <td><h2>TAMAÑO PIZZA</h2></td>
+                        <td><h2>CANTIDAD</h2></td>
+                        <td><h2>PRECIO</h2></td>
+                        <td><h2>AGREGAR</h2></td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">
+                            <select name="tipo" id="tipo" class="form-select text-center" aria-label="Default select example">
+                            </select><br>
+
+                            <button id="addTipo" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#agregarTipo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-plus-circle mx-2" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                              </svg></button>
+                        </td>
+
+                        <td class="align-middle">
+                            <select name="tamano" id="tamano" class="form-select text-center" aria-label="Default select example">
+                            </select><br>
+
+                            <button id="addTamano" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#agregarTC"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-plus-circle mx-2" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                              </svg></button>
+                        </td>
+
+                        <td class="align-middle">
+                            <input type="range" min="1" max="10" value="1" class="form-control" id="inputCantidad">
+                            <h1 id="vcantidad">1</h1>
+                        </td>
+
+                        <td><h1 id="costo">$0</h1></td>
+
+                        <td class="align-middle">
+                            <button class="btn btn-info" id="addPedido" style="height: 45px; width:180px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle mx-2" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                              </svg> Agregar Pedido</button>
+                        </td>
+                    </tr>
+
+                  </table>
+
+                  <div id="carrito"></div>
+
+            </div>
+            <div class="card-footer text-body-secondary">
+                STRAWBERRY'S PIZZERIA
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="agregarTipo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-ls">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 w-100 text-center" id="exampleModalLabel">AGREGAR TIPO DE PIZZA</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <table class="table w-100 m-auto">
+                <tr>
+                    <td>
+                        <label for="tipo" class="form-label">TIPO</label>
+                        <input type="text" class="form-control text-center" id="tipoPizza">
+                    </td>
+                </tr>
+            </table><br>
+
+            <button class="btn btn-success" onclick="addTipo()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill mx-4" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg></button>
+
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <div class="modal fade" id="agregarTC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-ls">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 w-100 text-center" id="exampleModalLabel">AGREGAR TAMAÑO Y COSTO DE PIZZA</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <table class="table w-100 m-auto">
+                <tr>
+                    <td>
+                        <label for="tamaño" class="form-label">TAMAÑO</label>
+                        <input type="text" class="form-control text-center" id="tamanoPizza">
+                    </td>
+                    <td>
+                        <label for="costo" class="form-label">COSTO $</label>
+                        <input type="text" class="form-control text-center" id="costoPizza">   
+                    </td>
+                </tr>
+            </table><br>
+
+            <button class="btn btn-success" onclick="addTC()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill mx-4" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg></button>
+
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
